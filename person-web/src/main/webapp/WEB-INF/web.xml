@@ -1,0 +1,97 @@
+<web-app id="WebApp_ID" version="2.4"
+ xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name>sample Web Application</display-name>
+  
+  <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>com.cubic.web.servlet.HelloWorldServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PersonListServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.PersonListServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>PersonViewFormServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.PersonViewFormServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>PersonCreateServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.PersonCreateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PersonRemoveServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.PersonRemoveServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginFormServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.LoginFormServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.cubic.web.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  
+  
+   <servlet-mapping>
+  	<servlet-name>LoginFormServlet</servlet-name>
+  	<url-pattern>/loginform</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>PersonCreateServlet</servlet-name>
+  	<url-pattern>/create</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>PersonRemoveServlet</servlet-name>
+  	<url-pattern>/remove</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+  	<servlet-name>PersonListServlet</servlet-name>
+  	<url-pattern>/list</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+  	<servlet-name>PersonViewFormServlet</servlet-name>
+  	<url-pattern>/form</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  
+  <session-config>
+  <session-timeout>10</session-timeout>
+  </session-config>
+  <filter>
+  <filter-name>LoginFilter</filter-name>
+  <filter-class>com.cubic.web.servlet.filter.LoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>LoginFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  </web-app>
